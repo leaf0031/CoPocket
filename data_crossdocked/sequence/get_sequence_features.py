@@ -8,7 +8,7 @@ from proteinbert import load_pretrained_model
 from keras.models import Model
 
 INPUT_FILE = 'data_crossdocked/sequence/pocket_sequence.yaml' 
-OUTPUT_DIR = '/home/xxr/workspace/now/data/crossdocked_sequence_features/proteinbert' 
+OUTPUT_DIR = 'data/crossdocked_sequence_features/proteinbert' 
 SEQ_LEN = 512  # Maximum sequence length
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
