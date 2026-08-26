@@ -1,0 +1,14 @@
+vocab: char        # char,selfies
+vocab_path: ./data_crossdocked/char_merged_vocab.yaml 
+smiles_dir: ./data_crossdocked/final_filter_train.yaml 
+pocket_dir:  /home/disk2/xxr/now/data/crossdocked_pocket10_mol/ 
+dataset: crossdocked    
+batch_size: 16 #8 #32 
+learning_rate: 0.0003  #   Redefined in the training file
+num_epoch: 50
+out_dir: ./save/
+seed: 666
+weight_decay: 0.0005     
+dataset_2:
+  name: pl
+  path: /home/disk2/xxr/now/data/crossdocked_pocket10_3DAtomF

@@ -1,0 +1,3 @@
+dataset: crossdocked # crossdocked    
+pocket_path: ./data_crossdocked/test.yaml 
+dock_dict_json: ./dock_file_save/pre/crossdocked/2025_06_17_11_0621162/dock_result/dock_dict.json 

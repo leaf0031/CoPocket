@@ -1,0 +1,40 @@
+pocket_sequence: true # false  # true
+cross_attention: false
+encoder_Train:
+  GNN: true   
+  HGNN: true # false # true    
+  KNN: true
+encoder_GAT:
+  num_features: 8 
+  hid_dim: 256    
+  in_head: 8       
+  out_size: 128    
+  graph_pool: set2set  
+encoder_HGNN:  
+  amino_hyperedge: true       
+  first_hyperedge: true       # First hyperedge set
+  W_matrix: false            
+HGNN_first_hyperedge:      
+  space_edge: true          
+  sequence_edge: false      
+  num_features: 31           
+  hidden_size: 256       
+  out_size: 128
+  W_matrix: false
+features_to_use:    
+- x
+- y
+- z
+- r
+- theta
+- phi
+- hydrophobicity   
+- binding_probability 
+encoder_interction: 
+  hidden_channels: 256
+  edge_channels: 64 
+  key_channels: 128
+  num_heads: 4
+  num_interaction: 6
+  cutoff: 10.0
+  knn: 32

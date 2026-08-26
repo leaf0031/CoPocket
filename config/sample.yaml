@@ -1,0 +1,8 @@
+result_dir: ./save/pre/crossdocked/char/all/2025_06_17_11/ 
+molecule_nums: 100                         
+block_size: 119                         
+top_k: 30                               
+temperature: 1
+sample_num: 1  
+sample_type: True                         # true means random sampling, and False means greedy sampling. The default is true.
+test_dir: ./data_crossdocked/test.yaml 

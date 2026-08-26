@@ -1,0 +1,14 @@
+
+- First, obtain the divided training set and test set based on the split_by_name.pt of the original crossdocked2020 data, and save them as output.json
+- Keep the processed test set and training set, as they will be used by the conditional molecule generator later
+
+Ligand processing, protein processing
+- sdftosmiles.py: First, process the ligands, converting SDF to SMILES, leaving 45,018 entries.
+- clean.py: Clean the SMILES, leaving 21,228 entries.
+- pdb_to_sequence.py: Processes protein pockets, converts them to sequences, leaving 21,208 entries
+- filter_sequence_data.py: Processes protein pockets in sequences based on clean_train.yaml, leaving 21,208 entries
+- hypregraphDssp_process folder: Since hypergraph features need to be extracted, and each protein pocket must have hypergraph features, this folder is used to obtain the dataset that cannot be used for feature extraction, saved as error_output_train.csv
+- filter_dssp.py: Obtains the final filtered training set, with 21,176 entries
+- filter_qed_ro5.py: Filter molecular properties, removing molecules with particularly poor properties from the training set, resulting in 15,770 entries  
+  - Note that this code must be placed in the same directory as the training set to run; it is kept together for structural consistency  
+  - The test set was converted from SDF to SMILES, reducing it from 100 entries to 52 entries

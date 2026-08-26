@@ -1,0 +1,24 @@
+## ChEMBL Dataset
+
+**Dataset Download**: The drug-like dataset is sourced from ChEMBL35. Download the SMILES sequences at https://ftp.ebi.ac.uk/pub/databases/chembl/ChEMBLdb/releases/chembl_35/
+
+**Dataset Preprocessing**:
+
+Remove chiral centers or stereoisomers from molecules to simplify molecular structures and reduce data complexity; remove salt ions or impurities from molecules; remove duplicate molecules to ensure each molecule is unique; remove molecules with a quantitative evaluation of drug-likeness (QED) less than 0.5; remove molecules with a synthetic accessibility score (SA) greater than 5; Filter out molecules with ring structures containing more than 6 atoms; retain molecules with lengths between 20 and 120; perform molecular standardization, removing all charged molecules to ensure overall molecular neutrality; screen atom types, retaining only molecules composed of common drug-related atoms (such as C, N, O, S, F, Cl, Br, and H)
+
+**Preprocessing Code**
+
+- The `filter_molecule.ipynb` file
+- The `clean_token.py` file 
+
+**Obtaining the vocabulary**
+
+- If only the molecule generator is used, `char_vocab.py` can be used to obtain the vocabulary for the ChEMBL dataset for model training
+- For convenience during debugging, the vocabulary from the ChEMBL dataset can also be used to train the model first
+- Since common atom types have been filtered out, the vocabulary obtained from the ChEMBL dataset must be merged with the vocabularies obtained from the crossdocked and PDBbind datasets. However, since the vocabularies of the crossdocked and PDBbind datasets include ChEMBL, the vocabularies of the crossdocked and PDBbind datasets should be used as the main vocabularies
+  - `char_vocab.py`: Used to obtain the vocabulary
+  - `./vocab/smiles_vocab_merge.py`: Used to merge the vocabulary
+  - The vocabulary from the crossdocked dataset and PDBbind dataset is used as the main vocabulary
+  - The methods for obtaining the vocabulary from these two datasets are provided below
+  - Merge the vocabulary lists from the crossdocked dataset and the PDBbind dataset, and place them in the `/vocab/` folder
+  - Additionally, for convenience, the vocabulary lists have been copied and placed in the same `/vocab/` folder

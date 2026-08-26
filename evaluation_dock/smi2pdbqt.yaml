@@ -1,0 +1,6 @@
+dataset: crossdocked   
+pocket_path: ./data_crossdocked/test.yaml  
+smiles_yaml: ./save/pre/crossdocked/char/all/2025_07_05_17/sample_300_30_True_1_1_3821244169/     # smiles address
+smiles_pdb: ./dock_file_save/pre/crossdocked/2025_07_05_17_1244169/smiles_pdb/   
+smiles_pdbqt: ./dock_file_save/pre/crossdocked/2025_07_05_17_1244169/smiles_pdbqt/
+error_list: ./dock_file_save/pre/crossdocked/2025_07_05_17_1244169/
