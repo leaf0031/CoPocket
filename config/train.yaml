@@ -11,4 +11,4 @@ seed: 666
 weight_decay: 0.0005     
 dataset_2:
   name: pl
-  path: /home/disk2/xxr/now/data/crossdocked_pocket10_3DAtomF
+  path: 
